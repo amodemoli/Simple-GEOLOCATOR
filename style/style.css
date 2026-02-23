@@ -1,0 +1,20 @@
+/* Font and styles here. */
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('./fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: Vazir;
+}
+
+.title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333333;
+    font-family: Vazir;
+}
