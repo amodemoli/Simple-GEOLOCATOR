@@ -1,10 +1,38 @@
-<h2>📍 Simple GEOLOCATOR - User Ip Finder</h2>
-A code written in PHP that allows you to see your IP accurately and get all the information possible from your IP. You can display it in other ways by modifying this source.
-<h3>🌎 How To Config And Use</h3>
-First, you visit the site (abstractapi.com) and find the GEOLOCATOR specific API and create an API key. Then you copy the obtained key and enter the source.
-Go to the config.php file and then in the code below, in the second empty field, enter your API key.
-Launch and open the project on Live Server or XAMPP and see your information.
-<h3>💻 Developer And Support Links</h3>
-![Website](https://demolition.ir)
-![Discord(https://discord.gg/mGNSgJDM2b)
-![FireCodes Discord](https://discord.gg/dcMRfbHB9s)
+# 📍 Simple GEOLOCATOR - User IP Finder
+
+<div align="center">
+  
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![AbstractAPI](https://img.shields.io/badge/AbstractAPI-0A66C2?style=for-the-badge&logo=api&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+</div>
+
+## 📋 Description
+
+A powerful PHP-based geolocation tool that accurately detects IP addresses and retrieves comprehensive information about them. This project utilizes AbstractAPI's IP Intelligence service to provide detailed data including location, security flags, ASN information, and more.
+
+### ✨ Features
+
+- 🔍 **Accurate IP Detection** - Get your exact public IP address
+- 🌍 **Comprehensive Location Data** - Country, city, region, coordinates
+- 🔒 **Security Analysis** - Detect VPN, Proxy, TOR usage
+- 🏢 **Network Information** - ASN, ISP, company details
+- ⏰ **Time Zone Data** - Local time, UTC offset
+- 🚩 **Country Flag** - Display flags with emoji and images
+- 💰 **Currency Info** - Local currency details
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- PHP 7.4 or higher
+- Web server (XAMPP, Live Server, etc.)
+- AbstractAPI API key
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/geolocator.git
+   cd geolocator
