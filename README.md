@@ -322,8 +322,8 @@ https://demolition.ir
 https://github.com/amodemoli
 
 ## 💬 Discord Servers
-- Discord Server 1: (Put your invite link here)
-- Discord Server 2: (Put your invite link here)
+- [Support Server](https://discord.gg/dcMRfbHB9s)
+- [SponsorShip Server](https://discord.gg/mGNSgJDM2b)
 
 ---
 
