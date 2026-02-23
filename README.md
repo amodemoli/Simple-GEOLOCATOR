@@ -5,34 +5,42 @@
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![AbstractAPI](https://img.shields.io/badge/AbstractAPI-0A66C2?style=for-the-badge&logo=api&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0.0-orange?style=for-the-badge)
+
+<br>
+  
+<img src="https://raw.githubusercontent.com/amodemoli/geolocator/main/preview.gif" alt="Demo Preview" width="600px">
 
 </div>
 
-## 📋 Description
+## 📋 Project Description
 
-A powerful PHP-based geolocation tool that accurately detects IP addresses and retrieves comprehensive information about them. This project utilizes AbstractAPI's IP Intelligence service to provide detailed data including location, security flags, ASN information, and more.
+A powerful and practical tool built with PHP that provides complete and accurate information about any IP address using AbstractAPI. From geographic location to VPN and proxy detection!
 
-### ✨ Features
+### ✨ Key Features
 
-- 🔍 **Accurate IP Detection** - Get your exact public IP address
-- 🌍 **Comprehensive Location Data** - Country, city, region, coordinates
-- 🔒 **Security Analysis** - Detect VPN, Proxy, TOR usage
-- 🏢 **Network Information** - ASN, ISP, company details
-- ⏰ **Time Zone Data** - Local time, UTC offset
-- 🚩 **Country Flag** - Display flags with emoji and images
-- 💰 **Currency Info** - Local currency details
+<div align="center">
+  
+| 🔍 IP Detection | 🌍 Location | 🔒 Security | 🏢 Network |
+|:---:|:---:|:---:|:---:|
+| Exact IP Display | Country & City | VPN Detection | ASN Information |
+| - | Geographic Coordinates | Proxy Detection | Company Name |
+| - | Postal Code | TOR Detection | Connection Type |
 
-## 🚀 Quick Start
+</div>
+
+### 🎯 Complete Information
+
+- ✅ **IP Address** - Display exact IP
+- ✅ **Security Check** - Detect VPN, Proxy, TOR, Hosting
+- ✅ **Location** - Country, city, region, postal code
+- ✅ **Coordinates** - Latitude and Longitude
+- ✅ **ASN Information** - ASN number, name, type
+- ✅ **Company Info** - ISP provider information
+- ✅ **Timezone** - Time zone, local time
+- ✅ **Currency** - Currency and symbol
+- ✅ **Flag** - Display country flag as image and emoji
+
+## 🚀 Installation & Usage Guide
 
 ### Prerequisites
-
-- PHP 7.4 or higher
-- Web server (XAMPP, Live Server, etc.)
-- AbstractAPI API key
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/geolocator.git
-   cd geolocator
