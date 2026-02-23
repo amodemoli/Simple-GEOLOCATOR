@@ -42,7 +42,7 @@ The system uses:
 
 You can test the system here:
 
-👉 https://geolocator.demolition.ir
+👉 http://demolition.ir/geolocator
 
 ---
 
