@@ -6,59 +6,335 @@
 ![AbstractAPI](https://img.shields.io/badge/AbstractAPI-0A66C2?style=for-the-badge&logo=api&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-1.0.0-orange?style=for-the-badge)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 <br>
   
 <img src="https://raw.githubusercontent.com/amodemoli/geolocator/main/preview.gif" alt="Demo Preview" width="600px">
 
-<br>
-  
-### 🌐 **Live Demo:** [geolocator.amir-modarresi.ir](https://geolocator.amir-modarresi.ir)
-
 </div>
+
+---
 
 ## 📋 Project Description
 
-A powerful and practical tool built with PHP that provides complete and accurate information about any IP address using AbstractAPI. From geographic location to VPN and proxy detection! This tool helps you identify visitors, check security threats, and gather comprehensive network information with a beautiful and responsive interface.
+**Simple GEOLOCATOR** is a PHP-based IP Intelligence tool that retrieves complete IP data using the **AbstractAPI IP Intelligence API**.
 
-### ✨ Key Features
+This project automatically detects the visitor’s IP address and fetches real-time data including:
 
-<div align="center">
-  
-| 🔍 IP Detection | 🌍 Location | 🔒 Security | 🏢 Network |
-|:---:|:---:|:---:|:---:|
-| Exact IP Display | Country & City | VPN Detection | ASN Information |
-| IPv4 & IPv6 Support | Geographic Coordinates | Proxy Detection | Company Name |
-| Custom IP Search | Postal Code & Region | TOR Detection | Connection Type |
-| - | Continent Information | Hosting Detection | ISP Provider |
+- Security status (VPN, Proxy, TOR, Hosting, Abuse, Mobile, Relay)
+- ASN information
+- ISP / Company details
+- Geographic location
+- Timezone data
+- Country flag
+- Currency information
 
-</div>
+The system uses:
 
-### 🎯 Complete Information Displayed
+- `cURL` for API communication
+- `json_decode()` to parse JSON responses
+- Structured output using associative arrays
+- A separated `config.php` file for secure API key storage
 
-- ✅ **IP Address** - Display exact IP with copy option
-- ✅ **Security Check** - Detect VPN, Proxy, TOR, Hosting, Relay status
-- ✅ **Location** - Country, city, region, postal code with map link
-- ✅ **Coordinates** - Latitude and Longitude (clickable for Google Maps)
-- ✅ **ASN Information** - ASN number, name, type, route domain
-- ✅ **Company Info** - ISP provider and organization information
-- ✅ **Timezone** - Time zone, current local time, UTC offset
-- ✅ **Currency** - Currency code, name, symbol with conversion link
-- ✅ **Flag** - Display country flag as image and emoji
-- ✅ **Languages** - Official languages of the country
+---
 
-## 🚀 Installation & Usage Guide
+## 🌐 Live Demo
 
-### 📋 Prerequisites
+You can test the system here:
 
-- **PHP** version 7.4 or higher
-- **Web Server** (Apache, Nginx, or XAMPP/WAMP for local)
-- **Internet Connection** for API calls
-- **AbstractAPI Key** (Free tier available)
+👉 https://geolocator.demolition.ir
 
-### 📦 Installation Steps
+---
 
-1. **Clone or Download the Repository**
-   ```bash
-   git clone https://github.com/amodemoli/geolocator.git
+## ✨ Features (Based Exactly on Source Code)
+
+### 🔐 Security Information
+- VPN Detection
+- Proxy Detection
+- TOR Detection
+- Hosting Detection
+- Relay Detection
+- Mobile Network Detection
+- Abuse Detection
+
+### 📃 ASN Information
+- ASN Number
+- ASN Name
+- ASN Domain
+- ASN Type
+
+### 🏢 Company Information
+- Company Name
+- Company Domain
+- Company Type
+
+### 🌐 Network Information
+- Associated Domains
+
+### 📍 Location Information
+- City
+- Region
+- Country
+- ISO Codes
+- GEO Name IDs
+- EU Status
+- Continent
+- Latitude & Longitude
+
+### ⏰ Timezone Information
+- Timezone Name
+- Abbreviation
+- UTC Offset
+- Local Time
+- DST Status
+
+### 🚩 Flag Information
+- Country Emoji
+- Unicode
+- PNG Flag Image
+- SVG Flag
+
+### 💰 Currency Information
+- Currency Name
+- ISO Code
+- Symbol
+
+---
+
+# 🚀 Installation & Usage Guide
+
+## 1️⃣ Prerequisites
+
+Make sure your server supports:
+
+- PHP 7.4+
+- cURL enabled
+- Internet access (outbound HTTPS requests allowed)
+
+To check if cURL is enabled:
+
+```php
+<?php
+phpinfo();
+?>
+```
+
+Search for **cURL Support → enabled**
+
+---
+
+## 2️⃣ Get Your API Key
+
+1. Go to:
+   👉 https://www.abstractapi.com/ip-intelligence-api
+
+2. Create an account
+
+3. Generate your API key
+
+---
+
+## 3️⃣ Configure API Key
+
+Create a file named:
+
+```
+config.php
+```
+
+And insert this code inside it:
+
+```php
+<?php
+define('APIKEY', '') // Enter your api key here (abstractapi.com)
+?>
+```
+
+Replace the empty string with your actual API key:
+
+```php
+define('APIKEY', 'your_real_api_key_here');
+```
+
+⚠️ IMPORTANT:
+- Never upload your real API key publicly.
+- Add `config.php` to `.gitignore`
+- Do not expose it inside frontend code.
+
+---
+
+## 📂 Project Structure
+
+```
+/geolocator
+│
+├── index.php
+├── config.php
+├── style/
+│   └── style.css
+└── README.md
+```
+
+---
+
+# ⚙️ How The Code Works (Step-by-Step Based on index.php)
+
+### 1️⃣ Load API Key
+
+```php
+require_once('config.php');
+$api_key = APIKEY;
+```
+
+Loads your secret API key from `config.php`.
+
+---
+
+### 2️⃣ Build API Request URL
+
+```php
+$url = "https://ip-intelligence.abstractapi.com/v1/?api_key=$api_key";
+```
+
+The API automatically detects the visitor IP because no IP parameter is specified.
+
+---
+
+### 3️⃣ Initialize cURL
+
+```php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_URL, $url);
+$response = curl_exec($ch);
+curl_close($ch);
+```
+
+- `CURLOPT_RETURNTRANSFER` → prevents direct output
+- Stores API response in `$response`
+
+---
+
+### 4️⃣ Decode JSON Response
+
+```php
+$data = json_decode($response, true);
+```
+
+Converts JSON response into an associative array.
+
+---
+
+### 5️⃣ Error Handling
+
+```php
+if ($data && !isset($data['error']))
+```
+
+Ensures:
+- API responded correctly
+- No error key exists
+
+If error exists → displays:
+
+```
+🔴 Error fetching IP information.
+```
+
+---
+
+### 6️⃣ Output Sections
+
+The script prints structured sections:
+
+- 📑 General Information
+- 📃 ASN Information
+- 💻 Company Information
+- 🌐 Network Information
+- 📍 Location Information
+- ⏰ Time Zone Information
+- 🚩 Flag Information
+- 💰 Currency Information
+- 🌐 Demolition Links
+
+Each value uses:
+
+```php
+($data['key'] ?? 'N/A')
+```
+
+This prevents PHP errors if data is missing.
+
+Boolean values are converted like this:
+
+```php
+($data['security']['is_vpn'] ? 'Yes' : 'No')
+```
+
+---
+
+# 🛡️ Security Notes
+
+- Never expose API keys
+- Always validate API responses
+- Consider adding rate limiting
+- Use HTTPS only
+- Protect against excessive API usage
+- Monitor AbstractAPI dashboard usage
+
+---
+
+# 📊 API Limits & Usage
+
+AbstractAPI provides:
+
+- Free tier with limited requests
+- Paid plans with higher limits
+- Dashboard monitoring
+- Real-time usage tracking
+
+If limit exceeded → API returns error JSON.
+
+---
+
+# 🔧 Customization
+
+You can:
+
+- Add manual IP lookup field
+- Add caching system
+- Improve UI styling
+- Add error logging
+- Add request timeout:
+
+```php
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+```
+
+---
+
+# 🌍 My Links
+
+## 🌐 Website
+https://demolition.ir
+
+## 🐈 GitHub
+https://github.com/amodemoli
+
+## 💬 Discord Servers
+- Discord Server 1: (Put your invite link here)
+- Discord Server 2: (Put your invite link here)
+
+---
+
+# 📄 License
+
+MIT License
+
+---
+
+# 👑 Author
+
+Developed by **Amir | Demolition.iR**
+
+If you like this project ⭐ Star the repository!
